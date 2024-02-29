@@ -1,0 +1,28 @@
+def test():
+    return(10,20)
+
+a, b = test(); #tuple 값을 리턴
+print(f"a= {a}, b = {b}")
+
+lst = ['a','b','c','d']
+for i, value in enumerate(lst): # 인덱스를 i로 안에 있는 것을 벨루로
+    # enumerate 리턴값 튜플
+    print(f"i = {i}, value = {lst}")
+
+
+def get_formatted_nam(first_name, last_name):
+    """transper"""
+    full_name = f"{first_name} {last_name}"
+    return full_name.title()
+
+while True:
+    print("\nPlease tell me your name:")#
+    f_name = input("Fist name: ")
+    if f_name == 'q':
+        break
+    l_name = input("Last name: ")
+    if l_name =='q':
+        break
+
+    formatted_name = get_formatted_nam(f_name, l_name)
+    print(f"\n hello, {formatted_name}")
