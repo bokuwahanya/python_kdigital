@@ -13,6 +13,18 @@ class Person:
     
     def show_person_vision(self):
         print("vison is {}".format(self.__vision))
+
+    def __call__(self):
+        return float(self.weight[1] +self.weight[2] / 2)
+    
+        # def __eq__( self, other):
+        #     return self.age == other.age
+
+    def __getitem__(self,indx):
+         return self.weight[indx]
+    
+    def __len__ (self):
+         return len(self.weight)
         
 new_person = Person('hong',20,'busan')
 other_person = Person('kim', 21, 'seoul')
@@ -27,24 +39,12 @@ new_person.show_person_vision() #변수.메서드 일반적이다.
 print(str(new_person))#str은 함수 객체로 # new_person.str() 이 아닐까. #내추럴 한 코딩
 print(new_person.__str__()) # 이것도 가능 
 
-def __len__ (self):
-    return len(self.weight)
-print(f"weight is {__len__(new_person)}")
-
+print(f"weight is {len(new_person)}")
 my_list=[1,2,3,4]
 print(len(my_list))
 print(f"list's len is {my_list.__len__()}")
-
-def __call__(self):
-    return float(self.weight[1] +self.weight[2] / 2)
-print(__call__(new_person))
-# def __eq__( self, other):
-#     return self.age == other.age
-
-def __getitem__(self,indx):
-    return self.weight[indx]
-
-print(f"now is{new_person[2]}")
+print(f"{new_person()}") ## call은 함수호출 처럼
+print(f"now is {new_person[2]}") ## 인덱스에서 
 
 
 #객체를 생성하고 함수를 설정하여 티키타카 하면됨
